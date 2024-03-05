@@ -1,6 +1,6 @@
-interface ICredentialDto {
+interface createCredentialDto {
   username: string;
   password: string;
 }
 
-export default ICredentialDto;
+export default createCredentialDto;

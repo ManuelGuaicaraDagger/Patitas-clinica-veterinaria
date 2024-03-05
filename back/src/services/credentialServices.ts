@@ -1,33 +1,30 @@
-import ICredentialDto from "../interfaces/IcredentialDto";
-import ICredential from "../interfaces/Icredentials";
+import { AppDataSource } from "../config/data-source";
+import Credential from "../entities/Credential";
+import validateCredentialDto from "../interfaces/IValidateCredentialDto";
+import createCredentialDto from "../interfaces/IcredentialDto";
 
-const credentials: ICredential[] = [];
-let credentialId: number = 1;
+const credentialModel = AppDataSource.getRepository(Credential);
 
 export const createCredential = async (
-  createCredentialDto: ICredentialDto
-): Promise<ICredential> => {
-  const newCredential: ICredential = {
-    id: credentialId++,
-    username: createCredentialDto.username,
-    password: createCredentialDto.password,
-  };
-  credentials.push(newCredential);
+  createCredentialDto: createCredentialDto
+): Promise<Credential> => {
+  const newCredential: Credential = credentialModel.create(createCredentialDto);
+  await credentialModel.save(newCredential);
   return newCredential;
 };
 
 export const validateCredential = async (
-  validateCredentialDto: ICredentialDto
-): Promise<ICredential> => {
+  validateCredentialDto: validateCredentialDto
+): Promise<Credential> => {
   const { username, password } = validateCredentialDto;
-  const foundCredential = credentials.find(
-    (credential) => credential.username === username
-  );
+  const foundCredential: Credential | null = await credentialModel.findOneBy({
+    username,
+  });
   if (!foundCredential) {
     throw Error("Usuario no encontrado");
   }
   if (password !== foundCredential.password) {
-    throw Error("Contraseña incorrecta");
+    throw Error("Password incorrecto");
   }
   return foundCredential;
 };
