@@ -4,7 +4,7 @@ import User from "../entities/User";
 import createUserDto from "../interfaces/IUserDto";
 import { createCredential } from "./credentialServices";
 
-const userModel = AppDataSource.getRepository(User);
+export const userModel = AppDataSource.getRepository(User);
 
 export const getAllUsersServices = async (): Promise<User[]> => {
   const allUsers: User[] = await userModel.find({
