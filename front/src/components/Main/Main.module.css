@@ -1,0 +1,26 @@
+.main {
+  background: linear-gradient(to bottom, #01c3b6 10%, #36afbe 50%, #5dcfcf 80%);
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.vet {
+  height: 700px;
+  width: auto;
+}
+
+.p {
+  color: white;
+  font-size: 1.8rem;
+  padding: 30px 80px;
+  text-align: justify;
+}
+
+.h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}

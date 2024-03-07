@@ -1,0 +1,108 @@
+/* reset.css */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+figure,
+blockquote,
+fieldset,
+legend {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* Set line-heights for better typography */
+body {
+  line-height: 1.5;
+  font-family: sans-serif;
+}
+
+/* Remove text indentation from inline elements */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-indent: 0;
+}
+
+/* Reset default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove text-decoration on focus */
+a:focus {
+  outline: none;
+}
+
+/* Remove text decoration for underlined links */
+a:hover {
+  text-decoration: none;
+}
+
+/* Remove default button styles */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Correct the cursor style of buttons */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+}
+
+/* Prevent text input from inheriting styles from the parent */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}

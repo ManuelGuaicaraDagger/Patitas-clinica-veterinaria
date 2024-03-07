@@ -1,0 +1,42 @@
+.header {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 130px;
+  padding: 0 150px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.paw {
+  width: auto;
+  margin-top: 5px;
+  height: 100px;
+}
+.icono {
+  width: auto;
+  margin-top: 5px;
+  height: 100px;
+}
+
+.li {
+  display: inline-block;
+  padding: 0px 30px;
+  transition: all 0.1s;
+}
+
+.li:hover {
+  transform: scale(1.1);
+}
+
+.a {
+  color: #00bed6;
+  font-size: 1.8rem;
+}
+
+.a:hover {
+  color: #01c3b6;
+}
