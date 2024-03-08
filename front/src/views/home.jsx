@@ -6,10 +6,7 @@ import Reviews from "../components/Reviews/Reviews";
 function Home() {
   return (
     <>
-      <Navbar />
       <Main />
-      <Reviews />
-      <Footer />
     </>
   );
 }

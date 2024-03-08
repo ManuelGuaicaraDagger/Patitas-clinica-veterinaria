@@ -1,0 +1,32 @@
+.card {
+  width: 1200px;
+  height: 50px;
+  margin: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  color: #06413d;
+}
+
+.date {
+  width: 70px;
+  text-align: center;
+}
+.time {
+  width: 70px;
+  text-align: center;
+}
+
+.description {
+  width: 400px;
+  text-align: center;
+}
+
+.status {
+  width: 70px;
+  text-align: center;
+}
