@@ -27,7 +27,14 @@ function Navbar() {
           {login && (
             <NavLink to="/appointments">
               <li className={styles.li}>
-                <span className={styles.span}>Reservar un turno</span>
+                <span className={styles.span}>Mis turnos</span>
+              </li>
+            </NavLink>
+          )}
+          {login && (
+            <NavLink to="/appointments">
+              <li className={styles.li}>
+                <span className={styles.span}>Reservar turno</span>
               </li>
             </NavLink>
           )}
@@ -36,14 +43,16 @@ function Navbar() {
               <span className={styles.span}>Sobre nosotros</span>
             </li>
           </NavLink>
-          <NavLink to="/login">
-            <li className={styles.li}>
-              <span className={styles.span}>Iniciar sesión</span>
-            </li>
-          </NavLink>
+          {!login && (
+            <NavLink to="/login">
+              <li className={styles.li}>
+                <span className={styles.span}>Iniciar sesión</span>
+              </li>
+            </NavLink>
+          )}
         </ul>
       </nav>
-      <NavLink to="/login">
+      <NavLink to={login ? "/appointments" : "/login"}>
         <img className={styles.icono} src={icono} alt="Logo" />
       </NavLink>
     </header>

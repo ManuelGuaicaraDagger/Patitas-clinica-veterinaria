@@ -8,10 +8,10 @@ const GETAPPOINTMENTS_URL = "http://localhost:3000/appointments";
 
 function MyAppointments() {
   const [appointments, setAppointments] = useState([]);
-  const actualUserId = useSelector(
-    (state) => state.actualUser.userData.user.id
-  );
-  console.log(actualUserId);
+  // const actualUserId = useSelector(
+  //   (state) => state.actualUser.userData.user.id
+  // );
+  // console.log(actualUserId);
   useEffect(() => {
     axios
       .get(GETAPPOINTMENTS_URL)
