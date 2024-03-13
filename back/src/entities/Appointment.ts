@@ -16,7 +16,7 @@ class Appointment {
   status: string;
 
   @Column()
-  decription: string;
+  description: string;
 
   @ManyToOne(() => User, (user) => user.appointments)
   user: User;

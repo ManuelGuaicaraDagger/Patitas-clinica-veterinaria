@@ -38,11 +38,48 @@
   height: 700px;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 }
 
-.h1 {
-  margin: 30px;
+.vet {
+  height: 700px;
+  width: auto;
+}
+
+.h2 {
   color: white;
   font-size: 3rem;
+  margin: 15px;
+}
+
+.formulario {
+  margin-left: 250px;
+}
+
+.form {
+  margin-bottom: 100px;
+  input {
+    margin: 10px;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+  }
+}
+
+.btn {
+  margin: 10px;
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: white;
+  color: #006962;
+  font-size: 1.3rem;
+  border: 0;
+}
+
+.btn:hover {
+  background-color: rgb(6, 65, 61);
+  color: white;
 }

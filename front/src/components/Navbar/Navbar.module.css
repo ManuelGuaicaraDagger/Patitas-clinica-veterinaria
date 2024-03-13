@@ -32,11 +32,11 @@
   transform: scale(1.1);
 }
 
-.a {
+.span {
   color: #00bed6;
   font-size: 1.8rem;
 }
 
-.a:hover {
+.span:hover {
   color: #01c3b6;
 }
