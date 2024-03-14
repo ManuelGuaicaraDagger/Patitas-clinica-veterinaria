@@ -128,28 +128,33 @@ function Register(props) {
 
   return (
     <main className={styles.main}>
-      <form onSubmit={handleSubmit}>
-        <h2>Registro</h2>
-        {formData.map(({ className, label, name, type, placeholder }) => {
-          return (
-            <div key={name}>
-              <label htmlFor={name}>{label}</label>
-              <input
-                className={className}
-                type={type}
-                id={name}
-                name={name}
-                value={user[name]}
-                placeholder={placeholder}
-                onChange={handleChange}
-              />
-              {errors[name] && <span>{errors[name]}</span>}
-            </div>
-          );
-        })}
-        <button type="submit">Enviar</button>
-        <button onClick={handleReset}>Borrar</button>
-      </form>
+      <div className={styles.formulario}>
+        <h2 className={styles.h2}>Registro</h2>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          {formData.map(({ className, name, type, placeholder }) => {
+            return (
+              <div key={name}>
+                <input
+                  required
+                  className={className}
+                  type={type}
+                  id={name}
+                  name={name}
+                  value={user[name]}
+                  placeholder={placeholder}
+                  onChange={handleChange}
+                />
+              </div>
+            );
+          })}
+          <button className={styles.btn} type="submit">
+            Enviar
+          </button>
+          <button className={styles.btn} onClick={handleReset}>
+            Borrar
+          </button>
+        </form>
+      </div>
       <img className={styles.vet} src={vet} alt="Veterinario" />
     </main>
   );

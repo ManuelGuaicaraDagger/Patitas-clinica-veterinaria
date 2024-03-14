@@ -50,6 +50,13 @@ function Navbar() {
               </li>
             </NavLink>
           )}
+          {login && (
+            <NavLink to="/">
+              <li className={styles.li}>
+                <span className={styles.span}>Cerrar sesión</span>
+              </li>
+            </NavLink>
+          )}
         </ul>
       </nav>
       <NavLink to={login ? "/appointments" : "/login"}>

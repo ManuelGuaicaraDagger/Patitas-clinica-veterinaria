@@ -4,7 +4,7 @@ import { useState } from "react";
 import vet from "../../assets/husky.jpg";
 import { useDispatch } from "react-redux";
 import { setUserData } from "../../redux/userSlices";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const USERLOGIN_URL = "http://localhost:3000/users/login";
 
@@ -88,6 +88,13 @@ function Login() {
           <button className={styles.btn} type="submit">
             Enviar
           </button>
+          <br />
+          <span className={styles.span}>
+            Si no tienes una cuenta, crea una dando{" "}
+            <NavLink className={styles.link} to="/register">
+              click aquí
+            </NavLink>
+          </span>
         </form>
       </div>
       <img className={styles.vet} src={vet} alt="Veterinario" />
