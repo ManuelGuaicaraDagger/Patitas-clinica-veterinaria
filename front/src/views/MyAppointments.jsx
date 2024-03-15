@@ -2,28 +2,31 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import AppointmentCard from "../components/Appointments/AppointmentCard";
 import styles from "./MyAppointments.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserAppointments } from "../redux/userSlice";
 
-const GETAPPOINTMENTS_URL = "http://localhost:3000/appointments";
+const GETUSERBYID_URL = "http://localhost:3000/users/";
 
 function MyAppointments() {
-  const [appointments, setAppointments] = useState([]);
-  // const actualUserId = useSelector(
-  //   (state) => state.actualUser.userData.user.id
-  // );
-  // console.log(actualUserId);
+  const dispatch = useDispatch();
+  const actualUserId = useSelector(
+    (state) => state.actualUser?.userData?.user?.id
+  );
+  const appointment = useSelector((state) => state.actualUser.userAppointments);
+
   useEffect(() => {
     axios
-      .get(GETAPPOINTMENTS_URL)
+      .get(GETUSERBYID_URL + actualUserId)
       .then((response) => response.data)
-      .then((appointmentsDB) => setAppointments(appointmentsDB))
+      .then((data) => data.appointments)
+      .then((appointments) => dispatch(setUserAppointments(appointments)))
       .catch((error) => console.log(error.message));
   }, []);
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.h1}>Mis reservas</h1>
-      {appointments.map((appointment) => (
+      <h1 className={styles.h1}>Mis turnos</h1>
+      {appointment.map((appointment) => (
         <AppointmentCard
           key={appointment.id}
           id={appointment.id}

@@ -3,7 +3,7 @@ import styles from "./Login.module.css";
 import { useState } from "react";
 import vet from "../../assets/husky.jpg";
 import { useDispatch } from "react-redux";
-import { setUserData } from "../../redux/userSlices";
+import { setUserData } from "../../redux/userSlice";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const USERLOGIN_URL = "http://localhost:3000/users/login";
@@ -90,9 +90,9 @@ function Login() {
           </button>
           <br />
           <span className={styles.span}>
-            Si no tienes una cuenta, crea una dando{" "}
+            ¿No tienes una cuenta?{" "}
             <NavLink className={styles.link} to="/register">
-              click aquí
+              Crea una aquí
             </NavLink>
           </span>
         </form>

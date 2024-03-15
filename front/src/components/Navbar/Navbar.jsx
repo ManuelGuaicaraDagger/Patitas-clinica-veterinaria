@@ -1,11 +1,19 @@
 import styles from "./Navbar.module.css";
 import icono from "../../assets/ico2.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import paw from "../../assets/paw.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setLogout } from "../../redux/userSlice";
 
 function Navbar() {
+  const navigate = useNavigate();
   const login = useSelector((state) => state.actualUser.userData.login);
+  const dispatch = useDispatch();
+  function handleLogout(event) {
+    event.preventDefault();
+    dispatch(setLogout({}));
+    navigate("/");
+  }
 
   return (
     <header className={styles.header}>
@@ -53,7 +61,9 @@ function Navbar() {
           {login && (
             <NavLink to="/">
               <li className={styles.li}>
-                <span className={styles.span}>Cerrar sesión</span>
+                <span onClick={handleLogout} className={styles.span}>
+                  Cerrar sesión
+                </span>
               </li>
             </NavLink>
           )}

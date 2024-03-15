@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import IUser from "../interfaces/Iusers";
 import {
   createUserService,
   findUserByCredentialId,
