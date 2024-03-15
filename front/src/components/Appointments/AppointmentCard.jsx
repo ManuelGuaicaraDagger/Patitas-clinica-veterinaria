@@ -3,7 +3,7 @@ import styles from "./AppointmentCard.module.css";
 
 function AppointmentCard({ id, date, time, status, description }) {
   date = new Date(date);
-  const formatDate = `${date.getDay()}/${
+  const formatDate = `${date.getDate()}/${
     date.getMonth() + 1
   }/${date.getFullYear()}`;
   if (status === "canceled") {

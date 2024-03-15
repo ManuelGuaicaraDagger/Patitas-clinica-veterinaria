@@ -13,7 +13,6 @@ function MyAppointments() {
     (state) => state.actualUser?.userData?.user?.id
   );
   const appointment = useSelector((state) => state.actualUser.userAppointments);
-
   useEffect(() => {
     axios
       .get(GETUSERBYID_URL + actualUserId)

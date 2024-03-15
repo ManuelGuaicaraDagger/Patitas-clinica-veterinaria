@@ -147,7 +147,11 @@ function Register(props) {
               </div>
             );
           })}
-          <button className={styles.btn} type="submit">
+          <button
+            className={styles.btn}
+            type="submit"
+            disabled={Object.keys(user).some((e) => !user[e])}
+          >
             Enviar
           </button>
           <button className={styles.btn} onClick={handleReset}>

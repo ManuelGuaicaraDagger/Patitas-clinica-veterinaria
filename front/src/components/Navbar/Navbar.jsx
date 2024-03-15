@@ -40,7 +40,7 @@ function Navbar() {
             </NavLink>
           )}
           {login && (
-            <NavLink to="/appointments">
+            <NavLink to="/AddAppointment">
               <li className={styles.li}>
                 <span className={styles.span}>Reservar turno</span>
               </li>
