@@ -17,7 +17,9 @@ function AppointmentCard({ id, date, time, status, description }) {
       <span className={styles.date}>{formatDate + " "}</span>
       <span className={styles.time}>{time + "hrs "}</span>
       <span className={styles.description}>{description + " "}</span>
-      <span className={styles.status}>{status}</span>
+      <span className={styles.status}>
+        {status} <button className={styles.btn}>x</button>{" "}
+      </span>
     </div>
   );
 }

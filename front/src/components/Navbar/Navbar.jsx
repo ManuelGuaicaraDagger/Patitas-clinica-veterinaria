@@ -17,9 +17,11 @@ function Navbar() {
 
   return (
     <header className={styles.header}>
-      <a className={styles.logo} href="#">
-        <img className={styles.paw} src={paw} alt="Logo" />
-      </a>
+      <NavLink to="/">
+        <a className={styles.logo} href="">
+          <img className={styles.paw} src={paw} alt="Logo" />
+        </a>
+      </NavLink>
       <nav>
         <ul>
           <NavLink to="/">

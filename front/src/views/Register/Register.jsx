@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Register.module.css";
 import axios from "axios";
 import vet from "../../assets/husky.jpg";
+import { useNavigate } from "react-router-dom";
 const POSTUSER = "http://localhost:3000/users/register";
 
 function Register(props) {
@@ -14,7 +15,7 @@ function Register(props) {
     password: "",
     confirmPassword: "",
   };
-
+  const navigate = useNavigate();
   const [user, setUser] = useState(initialState);
   const [errors, setErrors] = useState(initialState);
 
@@ -57,7 +58,7 @@ function Register(props) {
       .then(({ data }) => data)
       .then((userInDB) => {
         alert(`Ha sido creado el usuario ${userInDB.name}`);
-        setUser(initialState);
+        navigate("/login");
       })
       .catch((error) => alert(error.message));
   };

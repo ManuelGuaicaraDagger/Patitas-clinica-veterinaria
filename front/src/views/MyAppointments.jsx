@@ -25,16 +25,20 @@ function MyAppointments() {
   return (
     <main className={styles.main}>
       <h1 className={styles.h1}>Mis turnos</h1>
-      {appointment.map((appointment) => (
-        <AppointmentCard
-          key={appointment.id}
-          id={appointment.id}
-          date={appointment.date}
-          time={appointment.time}
-          status={appointment.status}
-          description={appointment.description}
-        />
-      ))}
+      {appointment.length ? (
+        appointment.map((appointment) => (
+          <AppointmentCard
+            key={appointment.id}
+            id={appointment.id}
+            date={appointment.date}
+            time={appointment.time}
+            status={appointment.status}
+            description={appointment.description}
+          />
+        ))
+      ) : (
+        <p className={styles.p}>No hay reservas</p>
+      )}
     </main>
   );
 }
