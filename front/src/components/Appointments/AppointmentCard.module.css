@@ -26,7 +26,7 @@
   text-align: center;
 }
 
-.status {
+.active {
   width: 90px;
   text-align: center;
 }
@@ -42,4 +42,10 @@
 .btn:hover {
   background-color: rgba(255, 0, 0, 0.664);
   color: white;
+}
+
+.canceled {
+  color: rgba(255, 0, 0, 0.664);
+  width: 90px;
+  text-align: center;
 }

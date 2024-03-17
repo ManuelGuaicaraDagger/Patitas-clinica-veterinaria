@@ -8,6 +8,7 @@ import { setUserAppointments } from "../redux/userSlice";
 const GETUSERBYID_URL = "http://localhost:3000/users/";
 
 function MyAppointments() {
+  const CANCEL_URL = "http://localhost:3000/appointments/cancel/";
   const dispatch = useDispatch();
   const actualUserId = useSelector(
     (state) => state.actualUser?.userData?.user?.id
@@ -22,6 +23,21 @@ function MyAppointments() {
       .catch((error) => console.log(error.message));
   }, []);
 
+  const handleCancel = (id) => {
+    axios
+      .put(CANCEL_URL + id)
+      .then((response) => response.data)
+      .then((data) => {
+        axios
+          .get(GETUSERBYID_URL + actualUserId)
+          .then((response) => response.data)
+          .then((data) => data.appointments)
+          .then((appointments) => dispatch(setUserAppointments(appointments)))
+          .catch((error) => console.log(error.message));
+      })
+      .catch((error) => alert(`Error al cancelar el turno`));
+  };
+
   return (
     <main className={styles.main}>
       <h1 className={styles.h1}>Mis turnos</h1>
@@ -34,6 +50,7 @@ function MyAppointments() {
             time={appointment.time}
             status={appointment.status}
             description={appointment.description}
+            handleCancel={handleCancel}
           />
         ))
       ) : (
