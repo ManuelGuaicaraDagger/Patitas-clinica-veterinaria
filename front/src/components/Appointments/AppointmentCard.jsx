@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./AppointmentCard.module.css";
+import { format, isAfter, subDays } from "date-fns";
 
 function AppointmentCard({
   id,
@@ -9,7 +10,10 @@ function AppointmentCard({
   description,
   handleCancel,
 }) {
+  const fechaActual = new Date();
   date = new Date(date);
+  // const fechaLimite = subDays(date, 1);
+
   const formatDate = `${date.getDate()}/${
     date.getMonth() + 1
   }/${date.getFullYear()}`;
@@ -20,6 +24,12 @@ function AppointmentCard({
     status = "Activo";
   }
   const handleClick = () => {
+    if (isAfter(fechaActual, date)) {
+      alert(
+        "No se puede cancelar el turno el mismo día o después de la fecha del turno."
+      );
+      return;
+    }
     if (
       window.confirm(
         `¿Desea cancelar el turno del día ${formatDate} a las ${time}?`

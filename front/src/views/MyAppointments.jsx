@@ -4,6 +4,7 @@ import AppointmentCard from "../components/Appointments/AppointmentCard";
 import styles from "./MyAppointments.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserAppointments } from "../redux/userSlice";
+import { format, isAfter, subDays } from "date-fns";
 
 const GETUSERBYID_URL = "http://localhost:3000/users/";
 
