@@ -18,9 +18,7 @@ function Navbar() {
   return (
     <header className={styles.header}>
       <NavLink to="/">
-        <a className={styles.logo} href="">
-          <img className={styles.paw} src={paw} alt="Logo" />
-        </a>
+        <img className={styles.paw} src={paw} alt="Logo" />
       </NavLink>
       <nav>
         <ul>
