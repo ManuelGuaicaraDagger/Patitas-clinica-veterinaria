@@ -12,7 +12,6 @@ function AppointmentCard({
 }) {
   const fechaActual = new Date();
   date = new Date(date);
-  // const fechaLimite = subDays(date, 1);
 
   const formatDate = `${date.getDate()}/${
     date.getMonth() + 1
@@ -25,9 +24,7 @@ function AppointmentCard({
   }
   const handleClick = () => {
     if (isAfter(fechaActual, date)) {
-      alert(
-        "No se puede cancelar el turno el mismo día o después de la fecha del turno."
-      );
+      alert("No se puede cancelar el turno el mismo día.");
       return;
     }
     if (
