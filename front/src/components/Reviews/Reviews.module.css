@@ -4,47 +4,46 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 100px;
 }
 
 .services {
   background-color: white;
-  height: 600px;
+  height: 500px;
   width: 450px;
-  margin-left: 200px;
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 7px 10px 9px -3px rgba(66, 66, 66, 0.78);
+  box-shadow: 7px 10px 9px -3px rgba(97, 97, 97, 0.78);
   transition: all 0.2s;
 }
 
 .servicestwo {
   background-color: white;
-  height: 600px;
+  height: 500px;
   width: 450px;
-  margin-right: 200px;
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 7px 10px 9px -3px rgba(66, 66, 66, 0.78);
+  box-shadow: 7px 10px 9px -3px rgba(97, 97, 97, 0.78);
   transition: all 0.2s;
 }
 
 .services:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .servicestwo:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .dani {
   width: 450px;
-  height: 526px;
+  height: 426px;
   border-radius: 0 0 19px 19px;
 }
 
